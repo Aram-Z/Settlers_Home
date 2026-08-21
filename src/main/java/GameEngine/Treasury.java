@@ -16,11 +16,19 @@ public class Treasury {
     private int gold = 0;
     private int steel = 0;
 
+    public Treasury(List<Building> buildings, List<Archer> archers, List<Swordsman> swordsmens, int gold, int steel) {
+        this.buildings = buildings;
+        this.archers = archers;
+        this.swordsmens = swordsmens;
+        this.gold = gold;
+        this.steel = steel;
+    }
+
 
     public void updateBuildings() {
         for (Building building : buildings) {
             // 1. Körléptetés az épületen belül
-            building.passTurn();
+            building.progressTurn();
 
             // 2. Ellenőrzés: termelt-e valamit?
             if (building.canProduceUnit()) {
@@ -86,16 +94,10 @@ public class Treasury {
         this.steel = steel;
     }
 
-    public Treasury(List<Building> buildings, List<Archer> archers, List<Swordsman> swordsmens, int gold, int steel) {
-        this.buildings = buildings;
-        this.archers = archers;
-        this.swordsmens = swordsmens;
-        this.gold = gold;
-        this.steel = steel;
+
 
 
 
 
 
     }
-}

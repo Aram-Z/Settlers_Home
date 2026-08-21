@@ -5,6 +5,9 @@ public class Unit {
     private int soldierHealth;
     private int attackDamage;
 
+    public Unit() {
+    }
+
     public Unit(int soldierHealth, int attackDamage) {
         setAttackDamage(attackDamage);
         setSoldierHealth(soldierHealth);

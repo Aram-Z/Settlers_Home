@@ -1,5 +1,8 @@
 package Buildings;
 
+import GameEngine.Resource;
+import Soldiers.Unit;
+
 public class Building {
 
     // Eltelt körök száma az építés óta
@@ -22,6 +25,8 @@ public class Building {
 
     // volt e nyersanyag gyártás
     boolean resourceIntervalMakeMaterial = false;
+
+
 
     public Building(int unitInterval, int resourceInterval) {
         this.turnsPassed = 0;
@@ -49,6 +54,18 @@ public class Building {
             resourceIntervalMakeMaterial = true;
         }
 
+    }
+
+    public boolean canProduceUnit() {
+        return progressTurnMakeUnit;
+    }
+
+    public Unit produceUnit() {
+        return progressTurnMakeUnit ? new Unit() : null;
+    }
+
+    public boolean canProduceResource() {
+        return resourceIntervalMakeMaterial;
     }
 
 
@@ -93,4 +110,7 @@ public class Building {
     }
 
 
+    public Resource produceResource() {
+        return resourceIntervalMakeMaterial ? new Resource() : null;
+    }
 }
