@@ -27,13 +27,11 @@ public class Treasury {
 
     public void updateBuildings() {
         for (Building building : buildings) {
-            // 1. Körléptetés az épületen belül
             building.progressTurn();
 
-            // 2. Ellenőrzés: termelt-e valamit?
             if (building.canProduceUnit()) {
-                Unit unit = building.produceUnit(); // Például Archer vagy Swordsman
-                // Hozzáadás a megfelelő listához
+                Unit unit = building.produceUnit();
+
                 if (unit instanceof Archer) {
                     archers.add((Archer) unit);
                 } else if (unit instanceof Swordsman) {
@@ -43,7 +41,7 @@ public class Treasury {
 
             if (building.canProduceResource()) {
                 Resource res = building.produceResource();
-                // Nyersanyag hozzáadása a megfelelő változóhoz
+
                 if (res.getType().equals("Gold")) {
                     this.gold += res.getQuantity();
                 } else {

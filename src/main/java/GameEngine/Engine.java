@@ -26,7 +26,6 @@ public class Engine {
             switch (command) {
                 case "build barracks":
                     Barracks newBarracks = new Barracks();
-                    // Hozzá kell adni a treasury épületlistájához is!
                     treasury.getBuildings().add(newBarracks);
                     treasury.updateBuildings();
                     break;
