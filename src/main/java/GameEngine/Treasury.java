@@ -53,7 +53,6 @@ public class Treasury {
         }
     }
 
-
     public List<Building> getBuildings() {
         return buildings;
     }
@@ -95,9 +94,13 @@ public class Treasury {
     }
 
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Status" + "\n" +
+                "Buildings: " + buildings.size() + "\n" +
+                "Archers: " + archers.size() + "\n" +
+                "Swordsmen: " + swordsmens.size() + "\n" +
+                "Gold: " + gold + "\n" +
+                "Steel: " + steel;
     }
+}
